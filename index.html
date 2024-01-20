@@ -20,38 +20,43 @@
 </head>
 
 <body>
+        <nav>
+            <ul>
+                <li>
+
+                    <i class="fa-brands fa-github fa-xl"></i>
+                    Github
+                </li>
+                <li>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+            </ul>
+        </nav>
 
 
     <div class="main-conatiner">
 
         <div class="user-details">
-            <img src="https://miro.medium.com/v2/resize:fit:564/1*Erk4NawQOHkf4wSN7JmB_A.jpeg" class="rounded-circle"  alt="" >
+            <img id="avatar" src="https://miro.medium.com/v2/resize:fit:564/1*Erk4NawQOHkf4wSN7JmB_A.jpeg" class="rounded-circle"  alt="" >
             <div class="details">
-                <h1>John Doe</h1>
-                <h1 class="fs-6">Bio Goes Here</h1>
-             <h1 class="fs-6"> Twiter<a href="#"> http://twitter.com/john_doe</a></h1>
+                <h1 id="username">John Doe</h1>
+                <h1 class="fs-6" id="bio">Bio Goes Here</h1>
+                <h1 id="location" class="fs-6"></h1>
+             <h1 class="fs-6"> Twitter:<a id="twitter"  href="#"> http://twitter.com/john_doe</a></h1>
             </div>
         </div>
 
         <div class="link">
             <i class="fa-solid fa-link fa-sm"></i>
-            <a class="fs-6" href="#">https://github.com/john_doe</a>
+            <a class="fs-6" id="git-url" href="#">https://github.com/john_doe</a>
         </div>
 
         <!-- repositories -->
         <div class="grid">
-            <div class="row row-cols-2 ">
-                <div class="g-col-6 mb-3">
-                    <div class="border border-dark p-2 m-2">
-                        <h1 class="fs-4">Heroes</h1>
-                        <h2 class="fs-6">Heroes description goes here</h2>
-                        <button class="btn btn-primary btn-sm">javascript</button>
-                        <button class="btn btn-primary btn-sm">angular</button>
-                        <button class="btn btn-primary btn-sm">angularjs</button>
-                        <button class="btn btn-primary btn-sm">Angular2+</button>
-                    </div>
-                </div>
-                <div class="g-col-6 mb-3 ">
+            <div id="repo" class="row row-cols-2 ">
+              
+                <!-- <div class="g-col-6 mb-3 ">
                     <div class="border border-dark p-2 m-2">
                         <h1 class="fs-4">Heroes</h1>
                         <h2 class="fs-6">Heroes description goes here</h2>
@@ -99,7 +104,7 @@
                         <button class="btn btn-primary btn-sm">angular</button>
                         <button class="btn btn-primary btn-sm">angularjs</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
