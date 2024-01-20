@@ -1,12 +1,23 @@
-  
- GetUserDetails("johnpapa");
- GetRepoDetails("johnpapa");
+//loaders
+document.onreadystatechange = function () {
+    var state = document.readyState
+    if (state == 'interactive') {
+        document.getElementById('contents').style.visibility = "hidden";
+    } else if (state == 'complete') {
+        setTimeout(function () {
+            document.getElementById('interactive');
+            document.getElementById('load').style.visibility = "hidden";
+            document.getElementById('contents').style.visibility = "visible";
+        }, 1000);
+    }
+}
   
   // Get User Details
   function GetUserDetails(username) {
       fetch(`https://api.github.com/users/${username}`)
           .then(response => response.json())
           .then(data => {
+            console.log('data',data);
               document.getElementById('username').innerHTML=data.name;
               document.getElementById('bio').innerHTML = data.bio;
               document.getElementById('location').innerHTML = data.location;
@@ -28,25 +39,57 @@
        
         data.forEach(repo => {
 
-            //  repoList.push({
-            //     "repoName":repo.name,
-            //     "description":repo.description,
-            //     "language": repo.language
-            //  })
-
-             divs = divs + `  
+              repoList.push({
+                "repoName":repo.name,
+                "description":repo.description,
+                "language_url": repo.languages_url
+             })
+        });
+            for (let i = 0; i<2; i++) {
+               divs = divs + `  
              <div class="g-col-6 mb-3">
                     <div class="border border-dark p-2 m-2">
-                        <h1 class="fs-4">${repo.name}</h1>
-                        <h2 class="fs-6">${repo.description} here</h2>
-                        <button class="btn btn-primary btn-sm">${repo.language}</button>
+                        <h1 class="fs-4">${repoList[i].repoName}</h1>
+                        <h2 class="fs-6">${repoList[i].description} here</h2>
+                        <button class="btn btn-primary btn-sm">hello</button>
+                        ${GetLanguages(repoList[i].languages_url)}
                     </div>
                 </div>`
-        });
+               
+            }
+
          document.getElementById('repo').innerHTML = divs;
-        // console.log(repoList);
        
     }).catch(error => console.error('Error fetching repositories:', error));
   
 }
+
+function GetLanguages(languages_url) {
+    if(languages_url){
+        console.log("null");
+    }else{
+
+  
+        fetch(languages_url)
+        .then(response => response.json())
+        .then(languages =>{
+             var langList = Object.keys(languages);
+             langList.forEach(lang =>{
+                console.log('lang:',lang);
+              })
+
+        } )
+        .catch(error => console.error('Error fetching languages:', error));
+       }
+}
+
+//search
+
+function SearchUser(){
+       const username = document.getElementById('searchUsername').value;
+        GetUserDetails(username);
+        GetRepoDetails(username);
+}
+
+
   
