@@ -19,13 +19,12 @@
 
 </head>
 
-<body>
-        <div id="load"></div>
-
+<body onload="loaderFunc()" style="margin:0;">
+    <div id="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
         <nav>
             <ul>
                 <li>
-
                     <i class="fa-brands fa-github fa-xl"></i>
                     Github
                 </li>
@@ -38,118 +37,40 @@
         </nav>
 
 
-    <div class="main-conatiner">
+        <div class="main-conatiner">
 
-        <div class="user-details">
-            <img id="avatar" src="https://miro.medium.com/v2/resize:fit:564/1*Erk4NawQOHkf4wSN7JmB_A.jpeg" class="rounded-circle"  alt="" >
-            <div class="details">
-                <h1 id="username">John Doe</h1>
-                <h1 class="fs-6" id="bio">Bio Goes Here</h1>
-                <h1 id="location" class="fs-6"></h1>
-             <h1 class="fs-6"> Twitter:<a id="twitter"  href="#"> http://twitter.com/john_doe</a></h1>
-            </div>
-        </div>
-
-        <div class="link">
-            <i class="fa-solid fa-link fa-sm"></i>
-            <a class="fs-6" id="git-url" href="#">https://github.com/john_doe</a>
-        </div>
-
-        <!-- repositories -->
-        <div class="grid">
-            <div id="repo" class="row row-cols-2 ">
-              
-                <!-- <div class="g-col-6 mb-3 ">
-                    <div class="border border-dark p-2 m-2">
-                        <h1 class="fs-4">Heroes</h1>
-                        <h2 class="fs-6">Heroes description goes here</h2>
-                        <button class="btn btn-primary btn-sm">javascript</button>
-                        <button class="btn btn-primary btn-sm">angular</button>
-                        <button class="btn btn-primary btn-sm">angularjs</button>
-
-                    </div>
+            <div class="user-details">
+                <img id="avatar" src="https://miro.medium.com/v2/resize:fit:564/1*Erk4NawQOHkf4wSN7JmB_A.jpeg"
+                    class="rounded-circle" alt="">
+                <div class="details">
+                    <h1 id="username">John Doe</h1>
+                    <h1 class="fs-6" id="bio">Bio Goes Here</h1>
+                    <h1 id="location" class="fs-6"><i class="fa-solid fa-location-dot fa-sm"></i></h1>
+                    <h1 class="fs-6"> Twitter:<a id="twitter" href="#"> http://twitter.com/john_doe</a></h1>
                 </div>
-                <div class="g-col-6 mb-3">
-                    <div class="border border-dark p-2 m-2">
-                        <h1 class="fs-4">Heroes</h1>
-                        <h2 class="fs-6">Heroes description goes here</h2>
-                        <button class="btn btn-primary btn-sm ">javascript</button>
-                        <button class="btn btn-primary btn-sm">angular</button>
-                        <button class="btn btn-primary btn-sm">angularjs</button>
-
-                    </div>
-                </div>
-                <div class="g-col-6 mb-3">
-                    <div class="border border-dark p-2 m-2">
-                        <h1 class="fs-4">Heroes</h1>
-                        <h2 class="fs-6">Heroes description goes here</h2>
-                        <button class="btn btn-primary btn-sm">javascript</button>
-                        <button class="btn btn-primary btn-sm">angular</button>
-                        <button class="btn btn-primary btn-sm">angularjs</button>
-                        <button class="btn btn-primary btn-sm">Angular2+</button>
-                    </div>
-                </div>
-                <div class="g-col-6 mb-3 ">
-                    <div class="border border-dark p-2 m-2">
-                        <h1 class="fs-4">Heroes</h1>
-                        <h2 class="fs-6">Heroes description goes here</h2>
-                        <button class="btn btn-primary btn-sm">javascript</button>
-                        <button class="btn btn-primary btn-sm">angular</button>
-                        <button class="btn btn-primary btn-sm">angularjs</button>
-                        <button class="btn btn-primary btn-sm">Angular2+</button>
-                    </div>
-                </div>
-                <div class="g-col-6 mb-3 ">
-                    <div class="border border-dark p-2 m-2">
-                        <h1 class="fs-4">Heroes</h1>
-                        <h2 class="fs-6">Heroes description goes here</h2>
-                        <button class="btn btn-primary btn-sm">javascript</button>
-                        <button class="btn btn-primary btn-sm">angular</button>
-                        <button class="btn btn-primary btn-sm">angularjs</button>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-
-        <!-- pages -->
-
-        <div class="pgs">
-
-            <div class="pages">
-                <div><button class="btn btn-outline-primary border border-dark-subtle"><i
-                            class="fa-solid fa-backward fa-sm" style="color: #74C0FC;"></i></button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">1</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">2</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">3</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">4</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">5</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">6</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">7</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">8</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle">9</button></div>
-                <div><button class="btn btn-outline-primary border border-dark-subtle"><i
-                            class="fa-solid fa-forward fa-sm" style="color: #74C0FC;"></i></button></div>
             </div>
 
+            <div class="link">
+                <i class="fa-solid fa-link fa-sm"></i>
+                <a class="fs-6" id="git-url" href="#">https://github.com/john_doe</a>
+            </div>
 
-            <div class="pagination">
-                <div class="older">
-                    <button class="btn rounded-pill border border-dark-subtle shadow "
-                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;">
-                        <i class="fa-solid fa-arrow-left fa-sm"></i> Older</button>
+            <!-- repositories -->
+            <div class="grid">
+                <div id="repo" class="row row-cols-2 ">
+                    <!-- Repositories cards render dynamically -->
                 </div>
+            </div>
 
-                <div class="newer">
-                    <button class="btn  rounded-pill border border-dark-subtle shadow"
-                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;">
-                        <i class="fa-solid fa-arrow-right fa-sm"></i> Newer</button>
+            <!-- pages -->
+            <div class="pgs">
+
+                <div id="pages" class="pages">
+                    <!-- will be rendered using RenderBottomNavigator() from js -->
                 </div>
             </div>
         </div>
-
     </div>
-
-
 
     <script src="script.js"></script>
 </body>
